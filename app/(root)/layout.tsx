@@ -5,7 +5,8 @@ import { Sidebar } from '@/components/Sidebar'
 import { checkSubscription } from '@/lib/subscription'
 
 const Layout: FC<{ children: ReactNode }> = async ({ children }) => {
-	const isPro = await checkSubscription()
+	// const isPro = await checkSubscription()
+	const isPro  = false
 	return (
 		<div className="h-full">
 			<Navbar isPro={isPro} />

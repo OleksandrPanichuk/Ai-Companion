@@ -13,7 +13,7 @@ interface RootPageProps {
 }
 
 const RootPage: FC<RootPageProps> = async ({ searchParams }) => {
-	// const user = await currentUser()
+	const user = await currentUser()
 
 
 
@@ -31,7 +31,11 @@ const RootPage: FC<RootPageProps> = async ({ searchParams }) => {
 		include: {
 			_count: {
 				select: {
-					messages: true
+					messages: {
+						where: {
+							userId: user?.id
+						}
+					}
 				}
 			}
 		}
