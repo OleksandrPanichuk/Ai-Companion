@@ -5,6 +5,8 @@ import db from '@/lib/prismadb'
 import { FC } from 'react'
 import { currentUser } from '@clerk/nextjs'
 
+export const runtime = 'edge'
+
 interface RootPageProps {
 	searchParams: {
 		categoryId: string
@@ -14,8 +16,6 @@ interface RootPageProps {
 
 const RootPage: FC<RootPageProps> = async ({ searchParams }) => {
 	const user = await currentUser()
-
-
 
 	const data = await db.companion.findMany({
 		where: {

@@ -4,9 +4,6 @@ import { Navbar } from '@/components/Navbar'
 import { Sidebar } from '@/components/Sidebar'
 import { checkSubscription } from '@/lib/subscription'
 
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store'
-export const runtime = 'edge'
 
 const Layout: FC<{ children: ReactNode }> = async ({ children }) => {
 	const isPro = await checkSubscription()
