@@ -5,7 +5,7 @@ import db from '@/lib/prismadb'
 import { FC } from 'react'
 import { currentUser } from '@clerk/nextjs'
 
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 interface RootPageProps {
 	searchParams: {
